@@ -3,12 +3,18 @@
 Use MQTT phone proxy setting, to keep bluetooth BLE default (random PIN, for easier WiFi code elimination and better security). Ignore WiFi IP based security option.
 Use EU_898 as the region.
 Keep default LONG_FAST free of MQTT. (channel 0).
-Make VERY_LONG_SLOW use MQTT, channels 4. (make it on channels 1 to 4 too for fun, if possible).
+* 0 - Default `LongFast` (chat).
+Make VERY_LONG_SLOW use MQTT if possible ... later, channels 1 to 4. (make it on channels 1 to 4 too for fun, if possible).
+* 1
+* 2
+* 3
+* 4
 Maybe unlikely though as the LoRa data format might be fixed across channels based on PRIMARY, but could be. This would make channels 1 to 4, leaving 5 to 7 for other purposes.
-* 5
-* 6
-* 7
+* 5 - `mil` (pentagrowne).
+* 6 - `admin` (cell or grid meme).
+* 7 - `dreams` (is it supposed to make sense).
 ## QR Code
+This excludes the `admin` channel and so on systems without `admin` might exclude `dreams`.
 
 ## Experimental Code Reductions and Additions
 * Remove WiFi usage.
