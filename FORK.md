@@ -1,20 +1,23 @@
-# ﻿Messtastik
+# ﻿Messtastik (in Development)
 ## My Meshtastic Config and Development Fork
 Use MQTT phone proxy setting, to keep bluetooth BLE default (random PIN, for easier WiFi code elimination and better security). Ignore WiFi IP based security option.
 Use EU_898 as the region.
 Keep default LONG_FAST free of MQTT. (channel 0).
-* 0 - Default `LongFast` (chat).
+* 0 - Default `LongFast` (chat and default happy telemetry).
 Make VERY_LONG_SLOW use MQTT if possible ... later, channels 1 to 4. (make it on channels 1 to 4 too for fun, if possible).
+An algorithm using decode frequency (of packets) would be good here, as the extra (9?) dB and "phone proxy" (no WiFi expected) net gateway would provide "fill".
+Then channels 1 to 4 are considered "dark mode entertainment". 
 * 1
 * 2
 * 3
 * 4
 Maybe unlikely though as the LoRa data format might be fixed across channels based on PRIMARY, but could be. This would make channels 1 to 4, leaving 5 to 7 for other purposes.
-* 5 - `mil` (pentagrowne).
+Using the LONG_FAST mode they'd be tactical updates, control and ad astral.
+* 5 - `mil` (pentagroawrne tactical nuts).
 * 6 - `admin` (cell or grid meme).
 * 7 - `dreams` (is it supposed to make sense).
-## QR Code
-This excludes the `admin` channel and so on systems without `admin` might exclude `dreams`.
+## QR Code (joining the may helm)
+This excludes the `admin` channel and so on systems without `admin` might exclude `dreams`. Sharing `admin` keys is bad, so set up and get channel 7 too.
 
 ## Experimental Code Reductions and Additions
 * Remove WiFi usage.
@@ -27,7 +30,7 @@ This excludes the `admin` channel and so on systems without `admin` might exclud
 * Various service tool bots.
 ## Branch Principles and Naming Conventions
 To maintain PR compatibility with feature expansion while also having code reduction all features are developed on a branch and the PR is from the branch before the merge into the reduce branch. The reduce branch is a pure code reduction branch, not designed to PR to upstream. The systematic process then becomes merge upstream into mai/master, create a merge/reduce branch, apply edits to allow a merge of the reduce branch, apply feature branches to the release branch, branched of the reduce branch. Naming branches in the form kind-iso-date allows tracking use, while tags can be used for more effective purpose tags in any automating scripts.
-* upstream -> (reduce MERGE | feature BRANCH)
+* upstream AKA master -> (reduce MERGE | feature BRANCH)
 * feature -> (upstream PR | release MERGE)
 * reduce -> release MERGE
 * release MAKE
