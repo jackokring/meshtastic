@@ -36,3 +36,5 @@ To maintain PR compatibility with feature expansion while also having code reduc
 * release MAKE
 ## The Fork’s Purpose
 The fork is not intended as a code split “political” argument, but as a general code resource designed principally with the idea of it being an ESP32 general coding repository, while maintaining “why shouldn’t it be a meshtastic client as well?” even though it might not maintain all features (such as WiFi app connectivity to phones). It is not even the fork’s purpose to maintain stability if “reduced” upstream features get used and no unstripped code exists to facilitate the misunderstanding.
+# Useful Info
+* `SPIFFS` is in `data` folder and must make and upload filesystem separate from code. Alien then `PROJECT TASKS/heltec-v3/Platform/...`. (8 MB limit).
