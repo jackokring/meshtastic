@@ -7,17 +7,17 @@ Keep default LONG_FAST free of MQTT. (channel 0).
 Make VERY_LONG_SLOW use MQTT if possible ... later, channels 1 to 4. (make it on channels 1 to 4 too for fun, if possible).
 An algorithm using decode frequency (of packets) would be good here, as the extra (9?) dB and "phone proxy" (no WiFi expected) net gateway would provide "fill".
 Then channels 1 to 4 are considered "dark mode entertainment". 
-* 1
-* 2
-* 3
-* 4
+* 1 - `admin` (remote admin).
+* 2 - `gpio` (for projects).
+* 3 - `serial` (for projects).
+* 4 - `mqtt` (`msh/2/json/mqtt/` automation channel, open (or close) MQTT downlink).
 Maybe unlikely though as the LoRa data format might be fixed across channels based on PRIMARY, but could be. This would make channels 1 to 4, leaving 5 to 7 for other purposes.
-Using the LONG_FAST mode they'd be tactical updates, control and ad astral.
 * 5 - `mil` (pentagroawrne tactical nuts).
-* 6 - `admin` (cell or grid meme).
-* 7 - `dreams` (is it supposed to make sense).
+* 6 - `logic` (it's supposed to make sense).
+* 7 - `dreams` (is it supposed to make sense?).
 ## QR Code (joining the may helm)
 This excludes the `admin` channel and so on systems without `admin` might exclude `dreams`. Sharing `admin` keys is bad, so set up and get channel 7 too.
+It also excludes the `gpio` and `mqtt` downlink channels perhaps excluding `mil` too. It's ok to allow the `serial` channel as it can be security mitigated.
 
 ## Experimental Code Reductions and Additions
 * Remove WiFi usage.
